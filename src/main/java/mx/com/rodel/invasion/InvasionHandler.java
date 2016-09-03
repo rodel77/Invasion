@@ -121,6 +121,11 @@ public class InvasionHandler extends BukkitRunnable{
 					name = Util.translate("&2&l&oIDEV &"+randomizeColor()+" &"+randomizeColor()+"&l rodel77 "+players.getValue().calculateTotal()+" kills");
 					ParticleEffects.CLOUD.display(1, 0, 1, 0, 10, playerE.getLocation(), 999999);
 				}
+				
+				if(playerE.getDisplayName().length()>=25){
+					name = playerE.getDisplayName().substring(0, 25)+"... "+players.getValue().calculateTotal()+" kills";
+				}
+				
 				Score player = objective.getScore(name);
 				player.setScore(num);
 				playerE.setScoreboard(board);

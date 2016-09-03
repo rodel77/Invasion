@@ -1,0 +1,10 @@
+name: Invasion
+main: main.java.mx.com.rodel.Main
+version: 2.2.3
+
+author: rodel77
+description: Get a zombie invasion and destroy them with you best swords
+
+commands:
+  invasion:
+    description: Invasion command!

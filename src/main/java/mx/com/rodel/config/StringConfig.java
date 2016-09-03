@@ -1,5 +1,6 @@
 package main.java.mx.com.rodel.config;
 
+import main.java.mx.com.rodel.Main;
 import main.java.mx.com.rodel.language.Language;
 
 public enum StringConfig {
@@ -71,6 +72,10 @@ public enum StringConfig {
 	
 	public String getKey(){
 		return "strings."+toString().toLowerCase().replace("_", ".");
+	}
+	
+	public String getFromConfig(){
+		return Main.getInstance().getString(this);
 	}
 	
 	public static StringConfig getByName(String name){

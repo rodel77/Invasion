@@ -643,10 +643,10 @@ public class FancyMessage implements JsonRepresentedObject, Cloneable, Iterable<
 			Class<?> chatSerializerClazz;
 
 			String version = Reflection.getVersion();
-			double majorVersion = Double.parseDouble(version.replace('_', '.').substring(1, 4));
-			int lesserVersion = Integer.parseInt(version.substring(6, 7));
-
-			if (majorVersion < 1.8 || (majorVersion == 1.8 && lesserVersion == 1)) {
+			
+			int v = Integer.parseInt(version.replaceAll("[^0-9.]", "").replace(".", ""));
+			
+			if (v < 18) {
 				chatSerializerClazz = Reflection.getNMSClass("ChatSerializer");
 			} else {
 				chatSerializerClazz = Reflection.getNMSClass("IChatBaseComponent$ChatSerializer");

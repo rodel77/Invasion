@@ -1,5 +1,7 @@
 package main.java.mx.com.rodel.commands;
 
+import static main.java.mx.com.rodel.utils.CommandTools.toPlayer;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -29,7 +31,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import main.java.mkremins.fanciful.FancyMessage;
 import main.java.mx.com.rodel.Main;
 import main.java.mx.com.rodel.config.StringConfig;
-import main.java.mx.com.rodel.effects.ReflectionUtils.PackageType;
 import main.java.mx.com.rodel.invasion.Invasion;
 import main.java.mx.com.rodel.invasion.InvasionManager;
 import main.java.mx.com.rodel.invasion.InvasionPlayer;
@@ -44,8 +45,6 @@ import main.java.mx.com.rodel.utils.WorldBlockManager;
 import main.java.mx.com.rodel.utils.WorldResponse;
 import main.java.mx.com.rodel.worldinvasion.WorldInvasion;
 import main.java.mx.com.rodel.worldinvasion.WorldInvasionManager;
-
-import static main.java.mx.com.rodel.utils.CommandTools.*;
 
 public class InvasionCommand implements CommandExecutor {
 
@@ -76,8 +75,7 @@ public class InvasionCommand implements CommandExecutor {
 			//1 arg
 			if(args.length==1){
 				if(args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("?")){
-					System.out.println(PackageType.getVersionNumber());
-					//help(sender);
+					help(sender);
 				}else if(args[0].equalsIgnoreCase("motd") || args[0].equalsIgnoreCase("news")){
 					toPlayer(sender).sendMessage(Util.translate("&b&l[&2&lInvasion - MOTD &c&l(News)&b&l] &2&l"+InvasionUpdatedData.getJsonValue("motd", true)));
 				}else if(args[0].equalsIgnoreCase("reload") && hasPermission("invasion.reload", sender)){

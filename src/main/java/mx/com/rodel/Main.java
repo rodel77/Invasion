@@ -346,6 +346,16 @@ public class Main extends JavaPlugin{
 		} catch (InvalidConfigurationException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			roundsC.load(roundsP);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InvalidConfigurationException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public HashMap<Integer, Invasion> getInvasions(){
@@ -391,6 +401,16 @@ public class Main extends JavaPlugin{
 			processConfig();
 		} catch (FileNotFoundException e) {
 			processConfig();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InvalidConfigurationException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			getConfig().load(getDataFolder().getAbsolutePath()+"/config.yml");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InvalidConfigurationException e) {
@@ -507,6 +527,16 @@ public class Main extends JavaPlugin{
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InvalidConfigurationException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			prizes.load(prizesP);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InvalidConfigurationException e) {

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.bukkit.command.CommandSender;
+
 import main.java.mx.com.rodel.mobs.InvasionMobs;
 
 public class InvasionPlayer {
@@ -11,6 +13,7 @@ public class InvasionPlayer {
 	private HashMap<InvasionMobs, Integer> stats = new HashMap<InvasionMobs, Integer>();
 	private List<String> bosses = new ArrayList<String>();
 	private String name;
+	private CommandSender sender;
 	
 	public InvasionPlayer(){
 		for(InvasionMobs mobs : InvasionMobs.values()){
@@ -60,5 +63,13 @@ public class InvasionPlayer {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public CommandSender getSender() {
+		return sender;
+	}
+
+	public void setSender(CommandSender sender) {
+		this.sender = sender;
 	}
 }
