@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.UUID;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import main.java.mx.com.rodel.Main;
@@ -32,6 +31,11 @@ public abstract class CustomInvasion {
 		return players;
 	}
 	
+	/**
+	 * Add one player to invasion
+	 * 
+	 * @param player
+	 */
 	public void addPlayer(Player player){
 		InvasionPlayer ip = new InvasionPlayer();
 		
@@ -43,6 +47,12 @@ public abstract class CustomInvasion {
 		Messenger.sendMessage(player, StringConfig.JOIN);
 	}
 	
+	/**
+	 * Remove one player to invasion
+	 * <br>
+	 * If you remove someone his data go to still in invasion for give credis in the final
+	 * @param player
+	 */
 	public void removePlayer(Player player){
 		InvasionPlayer ip;
 		if(players.containsKey(player.getUniqueId())){
@@ -67,10 +77,25 @@ public abstract class CustomInvasion {
 		}
 	}
 	
+	/**
+	 * This method execute when invasion start
+	 */
 	public abstract void onInvasionStart();
 	
-	public abstract void onInvasionTick();
+	/**
+	 * This method execute each 50 ticks
+	 */
+	public void onInvasionTick(){
+		
+	}
 	
+	/**
+	 * Call this method for stop invasion
+	 * <br>
+	 * You can make your own stop effect and then add super.stopInvasion();
+	 * <br>
+	 * Or only call it for set default effects, stop etc...
+	 */
 	public void stopInvasion(){
 		
 	}
