@@ -74,6 +74,10 @@ public class InvasionCommand implements CommandExecutor {
 			
 			//1 arg
 			if(args.length==1){
+				if(args[0].equalsIgnoreCase("mgtest") && player.isOp()){
+					
+				}
+				
 				if(args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("?")){
 					help(sender);
 				}else if(args[0].equalsIgnoreCase("motd") || args[0].equalsIgnoreCase("news")){

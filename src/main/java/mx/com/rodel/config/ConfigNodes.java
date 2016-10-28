@@ -3,7 +3,7 @@ package main.java.mx.com.rodel.config;
 public enum ConfigNodes {
 	UPDATECHECKER(true, "Check new updates when the server start"),
 	METRICS(true, "Enable/Disable metrics http://mcstats.org/plugin/Invasion"),
-	RANDOMSPAWNS_ENABLED(true, "Spawn random invasion"),
+	RANDOMSPAWNS_ENABLED(false, "Spawn random invasion"),
 	RANDOMSPAWMNS_PROBABILITY(0.3, "Each 2.5 secounds it go to throw a number 0.0 - 100.0, if your probability is major than the random number spawn invasion"),
 	RANDOMSPAWNWORLD_ENABLED(true, "Spawn random world invasion (Invasion in entire world)"),
 	RANDOMSPAWNWORLD_PROBABILITY(0.2, "Each 2.5 secounds it go to throw a number 0.0 - 100.0, if your probability is major than the random number spawn world invasion"),

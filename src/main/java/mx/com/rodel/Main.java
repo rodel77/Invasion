@@ -36,6 +36,7 @@ import main.java.mx.com.rodel.handlers.ListenerHandler;
 import main.java.mx.com.rodel.handlers.TickHandler;
 import main.java.mx.com.rodel.invasion.Invasion;
 import main.java.mx.com.rodel.invasion.InvasionState;
+import main.java.mx.com.rodel.minigame.MinigameManager;
 import main.java.mx.com.rodel.mobs.InvasionMobs;
 import main.java.mx.com.rodel.mobs.InvasionMobsController;
 import main.java.mx.com.rodel.utils.InvasionUpdatedData;
@@ -84,6 +85,12 @@ public class Main extends JavaPlugin{
 	public String roundsP = getDataFolder().getAbsolutePath()+"/rounds.yml";
 	public String prizesP = getDataFolder().getAbsolutePath()+"/prizes.yml";
 	public String bossP = getDataFolder().getAbsolutePath()+"/boss_abilities.yml";
+	public String arenasP = getDataFolder().getAbsolutePath()+"/arenas/";
+	
+	/**
+	 * MANAGERS
+	 */
+	private MinigameManager minigame = new MinigameManager();
 	
 	/**
 	 * FIELDS - VERSION
@@ -173,6 +180,7 @@ public class Main extends JavaPlugin{
 		parsePrices();
 		bossAbility();
 		parseAbilities();
+		minigame.loadArenas();
 	}
 	
 	@Override
@@ -553,5 +561,9 @@ public class Main extends JavaPlugin{
 	
 	public FileConfiguration getPrizes(){
 		return prizes;
+	}
+	
+	public MinigameManager getMinigameManager(){
+		return minigame;
 	}
 }
