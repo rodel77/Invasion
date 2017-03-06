@@ -1,0 +1,7 @@
+package mx.com.rodel.messages;
+
+import org.bukkit.entity.Player;
+
+public abstract class AbstractTitle {
+	public abstract void send(Player player);
+}
